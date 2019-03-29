@@ -3,6 +3,8 @@ plugins {
     id 'com.devsoap.vaadin-flow' version '1.0.1'
 }
 
+apply plugin: 'war'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -32,8 +34,15 @@ dependencies {
     compileOnly vaadin.servletApi()
     // Include a compatible slf4j version
     runtime vaadin.slf4j()
-    //Inckude Jquery
+    //Include Jquery
     implementation 'org.webjars.bower:jquery:3.3.1'
+
+    //Vaadin UI dependensies
+    'org.webjars.bowergithub.polymerelements:paper-item:2.1.1'
+    'org.webjars.bowergithub.polymerelements:paper-spinner:2.1.0'
+    'org.webjars.bowergithub.polymerelements:paper-icon-button:2.2.1'
+    'org.webjars.bowergithub.polymerelements:paper-slider:2.0.9'
+    'org.webjars.bowergithub.polymerelements:font-roboto:1.1.0'
 }
 
 wrapper {
