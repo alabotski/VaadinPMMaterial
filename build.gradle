@@ -1,0 +1,39 @@
+plugins {
+    id 'org.gretty' version '2.3.1'
+    id 'com.devsoap.vaadin-flow' version '1.0.1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    vaadin.prereleases()
+    vaadin.addons()
+}
+
+vaadin {
+    productionMode false
+    submitStatistics false
+    version '13.0.2'
+}
+
+vaadinTranspileDependencies {
+    yarnRunner.environment.put('NODE_OPTIONS', '--max-old-space-size=8192')
+}
+
+dependencies {
+    // Include BOM to stabilize Vaadin versions
+    implementation vaadin.bom()
+    // Include all Vaadin components
+    implementation vaadin.platform()
+    // Use the Material theme
+    implementation vaadin.materialTheme()
+    // Include a compatible servlet API version
+    compileOnly vaadin.servletApi()
+    // Include a compatible slf4j version
+    runtime vaadin.slf4j()
+}
+
+wrapper {
+    gradleVersion = 5.3
+}
