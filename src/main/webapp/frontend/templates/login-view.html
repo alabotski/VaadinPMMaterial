@@ -1,0 +1,24 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="login-form.html">
+
+<dom-module id="login-view">
+  <template>
+    <style include="--login-view-style"></style>
+    <login-form id="login-form"></login-form>
+  </template>
+
+  <script>
+    class LoginView extends Polymer.Element {
+      static get is() {
+        return 'login-view';
+      }
+
+      static get properties() {
+        return {};
+      }
+
+    }
+
+    customElements.define(LoginView.is, LoginView);
+  </script>
+</dom-module>

@@ -32,6 +32,8 @@ dependencies {
     compileOnly vaadin.servletApi()
     // Include a compatible slf4j version
     runtime vaadin.slf4j()
+    //Inckude Jquery
+    implementation 'org.webjars.bower:jquery:3.3.1'
 }
 
 wrapper {

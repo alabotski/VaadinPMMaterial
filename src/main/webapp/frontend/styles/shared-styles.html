@@ -1,0 +1,412 @@
+<style>
+  [theme~="dark"] {
+    --material-divider-color: #25282A;
+
+    --material-secondary-background-color: #16191B;
+    --material-background-color: #25282A;
+    /*--material-disabled-color: red;*/
+
+    --material-body-text-color: #FFFFFF;
+    --material-primary-text-color: #8B8E90;
+    --material-secondary-text-color: #646769;
+
+    --material-font-family: 'Circular Std Book';
+    --material-body-font-size: 15px;
+
+    --material-shadow-elevation-2dp: 0 2px 8px black;
+  }
+
+  .status-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 11px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 1px;
+  }
+
+  .status-icon[status="red"] {
+    background: red;
+  }
+
+  .status-icon[status="green"] {
+    background: green;
+  }
+
+  .snuggle-left {
+    margin-right: auto;
+  }
+
+  .snuggle-right {
+    margin-left: auto;
+  }
+</style>
+
+<dom-module id="vaadin-horizontal-layout-styles" theme-for="vaadin-horizontal-layout">
+  <template>
+    <style>
+      :host(#button-layout-operator-selection) {
+        justify-content: flex-end;
+
+      }
+
+      :host(#button-layout-operator-selection) ::slotted(vaadin-button) {
+        border: 1px solid gray;
+
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-horizontal-layout-styles-source-selection" theme-for="vaadin-horizontal-layout">
+  <template>
+    <style>
+      :host(#button-layout-source-selection) {
+        justify-content: flex-end;
+
+      }
+
+      :host(#button-layout-source-selection) ::slotted(vaadin-button) {
+        border: 1px solid gray;
+
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-horizontal-layout-styles-tuple-validation" theme-for="vaadin-horizontal-layout">
+  <template>
+    <style>
+      :host(#button-layout-tuple-validation) {
+        justify-content: flex-end;
+
+      }
+
+      :host(#button-layout-tuple-validation) ::slotted(vaadin-button) {
+        border: 1px solid gray;
+
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-vertical-layout-styles-second" theme-for="vaadin-vertical-layout">
+  <template>
+    <style>
+      :host([part="error-vertical-layout"]) ::slotted([part="error-header-msg"]) {
+        width: -webkit-fill-available;
+        border-bottom: 1px solid gray;
+        text-align: center;
+        margin-left: -40px;
+        margin-top: -40px !important;
+        margin-right: -40px;
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      :host([part="error-vertical-layout"]) ::slotted([part="error-descript"]) {
+        height: 0px;
+        overflow: hidden;
+        transition: 0.3s all ease-in-out;
+      }
+
+      :host([part="error-vertical-layout"]) ::slotted([part="error-descript"]) {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 153px;
+        overflow-x: hidden;
+        transition: 0.3s all ease-in-out;
+        overflow-y: auto;
+        width: 100%;
+        text-overflow: word-space;
+        display: block;
+        word-wrap: break-word;
+      }
+
+      :host([part="error-vertical-layout"]) ::slotted([part="close-btn"]) {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      :host([part="error-vertical-layout"]) ::slotted(div[part="error-descript"]::-webkit-scrollbar) {
+        width: 4px;
+        background-color: #434343;
+      }
+
+      :host([part="error-vertical-layout"]) ::slotted(div::-webkit-scrollbar) {
+        width: 4px;
+      }
+
+      :host(#flow-context) ::slotted(vaadin-button) {
+        width: 100%;
+        justify-content: left;
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-button-styles" theme-for="vaadin-button">
+  <template>
+    <style>
+      :host {
+        text-transform: none;
+        cursor: pointer;
+      }
+
+      :host .vaadin-button-container {
+        justify-content: left;
+      }
+
+      :host ::slotted(iron-icon) {
+        display: inline-block !important;
+        margin-right: 24px;
+      }
+
+      :host(#menu) ::slotted(iron-icon) {
+        display: inline-block;
+        margin-right: 24px;
+      }
+
+      :host(#login) {
+        height: 40px;
+        width: fit-content !important;
+        margin: 0 auto;
+        border-radius: 20px;
+      }
+
+      :host(#login) .vaadin-button-container {
+        padding: 0 60px;
+        width: auto;
+      }
+
+      :host(#menu) .vaadin-button-container {
+        justify-content: right;
+      }
+
+      :host(#menu[current]) #button {
+        background-color: transparent !important;
+        opacity: 0 !important;
+      }
+
+      :host(#menu:hover)::before {
+        opacity: 0;
+      }
+
+      :host(.toolbar-btn) {
+        margin: 0;
+        height: 32px;
+        border-radius: 0;
+        padding: 0 16px;
+        border-right: 1px solid #3e4143;
+      }
+
+      :host(.toolbar-btn:last-child) {
+        border-right: 0;
+      }
+
+      :host(.toolbar-btn) ::slotted(iron-icon) {
+        display: inline-block;
+      }
+
+      :host(.round) ::slotted(iron-icon),
+      :host(.toolbar-btn) ::slotted(iron-icon),
+      :host(.dialog-btn) ::slotted(iron-icon),
+      :host(#oauth-login) ::slotted(iron-icon) {
+        margin-right: 8px;
+      }
+
+      :host(.round) {
+        background: #16191B;
+      }
+
+      :host(.round), :host(.dialog-btn) {
+        height: 40px;
+        width: fit-content !important;
+        margin: 0 auto;
+        border-radius: 20px;
+        border: 1px solid #b1b4b6;
+        box-shadow: var(--material-shadow-elevation-2dp);
+      }
+
+      :host(.dialog-btn) {
+        box-shadow: none;
+        margin: 0;
+        border: 1px solid #ffffffc2;
+        padding: 8px 48px;
+        color: white;
+        opacity: 0.9;
+      }
+
+      :host(.round) .vaadin-button-container, :host(.dialog-btn) .vaadin-button-container {
+        padding: 0 24px 0 16px;
+        width: auto;
+        color: #ffffff;
+      }
+
+      :host(.field-btn) {
+        border: 1px solid #3c4143;
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="--login-view-style">
+  <template>
+    <style>
+      :host {
+        display: inherit;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to bottom, #25282A, #101315);
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="--login-form-style">
+  <template>
+    <style>
+      :host {
+        position: relative;
+        top: calc(50vh - 220px);
+        display: block;
+        /*--material-font-family: "Helvetica Neue", Arial, sans-serif;*/
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        box-sizing: border-box;
+        width: 400px;
+        height: 424px;
+        margin: 0 auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.43), 0 10px 10px rgba(0, 0, 0, 0.29);
+        /*--material-primary-color: #2962ff;*/
+        /*--material-primary-text-color: #4f5b62;*/
+        background-color: var(--material-divider-color);
+      }
+
+      svg path {
+        fill: #8b8e90;
+      }
+
+      :host(input[part="label"]) {
+        z-index: 2;
+      }
+
+      .primary {
+        background-color: var(--material-primary-color);
+        color: var(--material-primary-contrast-color);
+      }
+
+      vaadin-button {
+        margin-top: 32px;
+        display: flex;
+      }
+
+      .log-form__head {
+        border-bottom: 1px solid #313436;
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+        text-align: center;
+        height: 95px;
+        box-sizing: border-box;
+      }
+
+      .log-form__body {
+        padding: 63px 40px 0 40px;
+        box-sizing: border-box;
+      }
+
+      .log-form {
+        border-radius: 6px;
+      }
+
+      vaadin-text-field {
+        width: 100%;
+        margin-top: -24px;
+      }
+
+      vaadin-password-field {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      vaadin-checkbox {
+        text-align: center;
+        margin-top: 30px;
+        color: var(--material-secondary-text-color);
+      }
+
+      .error-message {
+
+        font-size: 13px;
+        text-align: center;
+        height: 55px;
+        text-align: center;
+        margin-top: -100px;
+        box-sizing: border-box;
+        color: var(--material-error-text-color);
+        opacity: 0;
+        transition: 0.3s all ease-in-out;
+        line-height: 1.4;
+      }
+
+      /* class for vibrate button  */
+      [error-button] {
+        animation-name: vibrate;
+        animation-duration: 0.6s;
+      }
+
+      /* class for showing error  */
+      [visible-error-message] {
+        opacity: 1;
+      }
+
+      @keyframes vibrate {
+        0%, 30%, 60%, 85%, 100% {
+          left: 0;
+          background-color: var(--material-error-color);
+        }
+        10%, 40%, 90%, 70% {
+          left: -2px;
+          background-color: var(--material-error-color);
+        }
+        20%, 50%, 80%, 95% {
+          left: 2px;
+          background-color: var(--material-error-color);
+        }
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-text-field-styles" theme-for="vaadin-text-field">
+  <template>
+    <style>
+      :host [part="input-field"]::before {
+        background-color: #646769;
+        opacity: 1;
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-text-area-styles" theme-for="vaadin-text-area">
+  <template>
+    <style>
+      :host textarea {
+        overflow-x: auto;
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="vaadin-checkbox-styles" theme-for="vaadin-checkbox">
+  <template>
+    <style>
+      :host [part="checkbox"], :host:hover [part="checkbox"] {
+        background-color: var(--material-secondary-text-color) !important;
+      }
+    </style>
+  </template>
+</dom-module>

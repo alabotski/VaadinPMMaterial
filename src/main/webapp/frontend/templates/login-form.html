@@ -1,0 +1,65 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/vaadin-checkbox/vaadin-checkbox.html">
+
+<dom-module id="login-form">
+  <template>
+    <style include="--login-form-style"></style>
+
+    <div class="log-form dark">
+      <div class="log-form__head">
+        Test Material Design
+      </div>
+      <div class="log-form__body">
+        <vaadin-text-field id="user" class="form-field" label="Login" autofocus autocomplete="false"
+                           value="{{userName}}" placeholder="Type a login"></vaadin-text-field>
+        <vaadin-password-field id="password" label="Password" value="{{password}}" placeholder="Type a password"
+                               required></vaadin-password-field>
+        <vaadin-checkbox>Remember me</vaadin-checkbox>
+        <vaadin-button id="login" theme="contained" class="primary login-button">Login
+        </vaadin-button>
+        <div class="error-message" id="errorMsg">
+          The username and password you entered do not match our records.
+          Please double-check and try again
+        </div>
+      </div>
+    </div>
+    <slot></slot>
+  </template>
+
+  <script>
+    class LoginForm extends Polymer.Element {
+      static get is() {
+        return 'login-form';
+      }
+
+      static get properties() {
+        return {
+          error: {
+            type: Boolean,
+            value: false,
+            observer: "_loginFailed"
+          },
+          failedAttempts: {
+            type: Number,
+            value: 0,
+            observer: "_loginFailed"
+          }
+        };
+      }
+
+      _loginFailed() {
+        if (this.error && this.failedAttempts > 0) {
+          this.$.errorMsg.setAttribute('visible-error-message', '');
+          var errorAttributeName = 'error-button'
+          var loginButton = this.$.login;
+          loginButton.removeAttribute(errorAttributeName); // remove  if already present
+          setTimeout(function () {
+            loginButton.setAttribute(errorAttributeName, '');
+          }, 200)
+        }
+      }
+    }
+
+    customElements.define(LoginForm.is, LoginForm);
+  </script>
+</dom-module>
