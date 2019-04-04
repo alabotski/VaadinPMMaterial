@@ -18,7 +18,7 @@ import com.vaadin.flow.theme.material.Material;
  */
 @Route(value = "", absolute = true)
 @Tag("login-view")
-@JavaScript("frontend://bower_components/jquery/3.3.1/dist/jquery.min.js")
+@JavaScript("frontend://bower_components/jquery/dist/jquery.min.js")
 @HtmlImport("frontend://styles/shared-styles.html")
 @HtmlImport("frontend://templates/login-view.html")
 @Theme(value = Material.class, variant = Material.DARK)
