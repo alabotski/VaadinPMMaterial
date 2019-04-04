@@ -1,6 +1,6 @@
 plugins {
     id 'org.gretty' version '2.3.1'
-    id 'com.devsoap.vaadin-flow' version '1.0.1'
+    id 'com.devsoap.vaadin-flow' version '1.1'
 }
 
 apply plugin: 'war'
@@ -16,7 +16,7 @@ repositories {
 vaadin {
     productionMode false
     submitStatistics false
-    version '13.0.2'
+    version '13.0.3'
 }
 
 vaadinTranspileDependencies {
@@ -38,12 +38,13 @@ dependencies {
     implementation 'org.webjars.bower:jquery:3.3.1'
 
     //Vaadin UI dependensies
-    implementation 'org.webjars.bowergithub.polymerelements:paper-item:2.1.1'
-    implementation 'org.webjars.bowergithub.polymerelements:paper-spinner:2.1.0'
-    implementation 'org.webjars.bowergithub.polymerelements:paper-icon-button:2.2.1'
-    implementation 'org.webjars.bowergithub.polymerelements:paper-slider:2.0.9'
-}
+//    implementation 'org.webjars.bowergithub.polymerelements:paper-item:2.1.1'
+//    implementation 'org.webjars.bowergithub.polymerelements:paper-spinner:2.1.0'
+//    implementation 'org.webjars.bowergithub.polymerelements:paper-icon-button:2.2.1'
+//    implementation 'org.webjars.bowergithub.polymerelements:paper-slider:2.0.9'
 
-wrapper {
-    gradleVersion = 5.3
+
+    wrapper {
+        gradleVersion = '5.3.1'
+    }
 }
