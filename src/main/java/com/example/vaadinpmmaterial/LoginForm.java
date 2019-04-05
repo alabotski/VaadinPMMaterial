@@ -1,6 +1,9 @@
 package com.example.vaadinpmmaterial;
 
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.polymertemplate.Id;
@@ -16,23 +19,28 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @HtmlImport("frontend://templates/login-form.html")
 public class LoginForm extends PolymerTemplate<LoginForm.Model> {
 
-    @Id("password")
-    private PasswordField _password;
-    @Id("login")
-    private Button _login;
+  @Id("password")
+  private PasswordField _password;
+  @Id("login")
+  private Button _login;
 
-    public interface Model extends TemplateModel {
+  public LoginForm() {
+    _login.addClickListener(
+        (ComponentEventListener<ClickEvent<Button>>) buttonClickEvent -> UI.getCurrent().navigate(HomeView.class));
+  }
 
-        void setError(boolean error);
+  public interface Model extends TemplateModel {
 
-        String getUserName();
+    void setError(boolean error);
 
-        String getPassword();
+    String getUserName();
 
-        int getFailedAttempts();
+    String getPassword();
 
-        void setFailedAttempts(int failedAttempts);
-    }
+    int getFailedAttempts();
+
+    void setFailedAttempts(int failedAttempts);
+  }
 
 
 }

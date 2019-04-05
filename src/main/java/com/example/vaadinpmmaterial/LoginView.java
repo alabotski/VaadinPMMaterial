@@ -16,7 +16,7 @@ import com.vaadin.flow.theme.material.Material;
 /**
  * entry point for form login based auth.
  */
-@Route(value = "", absolute = true)
+@Route(value = "")
 @Tag("login-view")
 @JavaScript("frontend://bower_components/jquery/dist/jquery.min.js")
 @HtmlImport("frontend://styles/shared-styles.html")
@@ -24,7 +24,7 @@ import com.vaadin.flow.theme.material.Material;
 @Theme(value = Material.class, variant = Material.DARK)
 @BodySize(height = "100vh", width = "100vw")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
-public class VaadinPMMaterialView extends PolymerTemplate<TemplateModel> implements HasComponents {
+public class LoginView extends PolymerTemplate<TemplateModel> implements HasComponents {
 
     @Id("login-form")
     private LoginForm _loginForm;
